@@ -1,0 +1,21 @@
+Inputs:
+- Files: .xlsx 
+    - Intertex File
+    - Vendor Price List
+- Sku Column Names: str 
+    - itx_sku_c
+    - vendor_sku_c
+- Price Column Names: str
+    - itx_price_c
+    - vendor_price_c
+
+Outputs:
+Outputs will be placed in the directory where the script is located. There will be a date suffix in the output file names.
+
+- Updated Intertex File: File that contains all the data from the input Intertex file but with the updated prices.
+- Flagged Sku File: File that contains four columns:
+    - sku | new_price | old_price | Percentage Change
+        - The sku column will contain the skus that had a price change
+        - The new_price column will contain the updated price for the sku
+        - The old_price will contain the previous intertex price for the sku
+        - The Percentage Change will be the percentage change difference between the prices. A negative percentage change value would indicate the new price is lower than the old price
